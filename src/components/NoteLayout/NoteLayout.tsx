@@ -1,14 +1,14 @@
 import React from 'react';
-import { AppBar, Toolbar, Box, Typography, Grid } from '@mui/material';
+import { AppBar, Box, Toolbar } from '@mui/material';
+import NoteList from '../NoteList/NoteList';
 
 export const NoteLayout = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar>
-        <Toolbar>
-          
-        </Toolbar>
+        <Toolbar></Toolbar>
       </AppBar>
+      <NoteList />
     </Box>
   );
 };

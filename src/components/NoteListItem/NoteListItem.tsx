@@ -1,23 +1,22 @@
 import React from 'react';
 import { ListItem, ListItemText, Divider, ListItemAvatar, Avatar } from '@mui/material';
-import { Note } from '@mui/icons-material';
+import { Note as NoteIcon } from '@mui/icons-material';
+import { Note } from '../../types';
 
-interface NoteProps {
-  id: number;
-  text: string;
+interface NoteProps extends Note {
   isLastItem: boolean;
 }
 
-export const NoteListItem = (props: NoteProps) => {
+export default function NoteListItem(props: NoteProps) {
   return (
     <>
       <ListItem>
         <ListItemAvatar>
-          <Note />
+          <NoteIcon />
         </ListItemAvatar>
         <ListItemText>{props.text}</ListItemText>
       </ListItem>
-      {props.isLastItem && <Divider variant="fullWidth" component="li" />}
+      {!props.isLastItem && <Divider variant="fullWidth" component="li" />}
     </>
   );
-};
+}

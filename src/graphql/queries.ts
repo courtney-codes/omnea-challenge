@@ -9,10 +9,6 @@ const LIST_NOTES_QUERY = gql`
   }
 `;
 
-interface GetNoteArguments {
-  id: number;
-}
-
 const GET_NOTE_QUERY = gql`
   query getNote($id: Int!) {
     notes_by_pk(id: $id) {
