@@ -3,18 +3,20 @@ import { ListItem, ListItemText, Divider, ListItemAvatar, Avatar } from '@mui/ma
 import { Note as NoteIcon } from '@mui/icons-material';
 import { Note } from '../../types';
 
-interface NoteProps extends Note {
+interface NoteListItemProps {
+  note: Note;
   isLastItem: boolean;
 }
 
-export default function NoteListItem(props: NoteProps) {
+export default function NoteListItem(props: NoteListItemProps) {
+  const { note } = props;
   return (
     <>
       <ListItem>
         <ListItemAvatar>
           <NoteIcon />
         </ListItemAvatar>
-        <ListItemText>{props.text}</ListItemText>
+        <ListItemText>{note.text}</ListItemText>
       </ListItem>
       {!props.isLastItem && <Divider variant="fullWidth" component="li" />}
     </>

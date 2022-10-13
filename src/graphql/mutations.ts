@@ -25,4 +25,4 @@ const EDIT_NOTE_MUTATION = gql`
   }
 `;
 
-export { ADD_NOTE_MUTATION, EDIT_NOTE_MUTATION };
+export { ADD_NOTE_MUTATION, EDIT_NOTE_MUTATION, InsertNoteArguments };
